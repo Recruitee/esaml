@@ -2,6 +2,9 @@
 
 All changes are in the `main` branch (`master` remains unchanged).
 
+### v4.6.1
++   Disable XML entity expansion (`{allow_entities, false}`) at every parse of attacker-influenced XML - inbound response decode, decrypted-assertion scan, and IdP metadata fetch. Mitigates CVE-2026-28809 (XXE) explicitly rather than relying on the xmerl default; a no-op on OTP 27+, protection on older OTP. Requires OTP 26.0.1+.
+
 ### v4.6.0
 +   remove uri double encoding thanks to @DiaanEngelbrecht
 
